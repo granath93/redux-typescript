@@ -26,14 +26,27 @@
 // export default App;
 
 import React from "react";
-import { Route } from "react-router-dom";
+import theme from "./theme";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomePage from "./pages/homePage";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider } from "@material-ui/core/styles";
+import configureStore from "./store/store";
+
+const store = configureStore();
 
 function App() {
   return (
-    <div>
-      <Route path="/" exact component={HomePage} />
-    </div>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        <CssBaseline />
+        <Router>
+          <Route path="/" exact component={HomePage} />
+        </Router>
+      </ThemeProvider>
+    </Provider>
   );
 }
 

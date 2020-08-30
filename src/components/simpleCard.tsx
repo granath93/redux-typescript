@@ -43,12 +43,8 @@ const useStyles = makeStyles({
 });
 
 export default function SimpleCard() {
-  //this object represents the classes that we defined
   const classes = useStyles();
-  //this hook allows us to access the dispatch function
   const dispatch = useDispatch();
-  //the useState() hook allows our component to hold its own internal state
-  //the dogName property isn't going to be used anywhere else, so there's no need to hold it on the redux store
   const [dogName, setDogName] = useState("");
   //here we watch for the loading prop in the redux store. every time it gets updated, our component will reflect it
   const isLoading = useSelector((state: IAppState) => state.dogState.loading);
