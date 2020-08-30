@@ -1,17 +1,17 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import SimpleCard from '../components/simpleCard';
-import { Container } from '@material-ui/core';
-import DogCard from '../components/dogCard';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import SimpleCard from "../components/simpleCard";
+import { Container } from "@material-ui/core";
+import DogCard from "../components/dogCard";
 
 const useStyles = makeStyles({
   root: {
     textAlign: "center",
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    height: '100vh'
-  }
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    height: "100vh",
+  },
 });
 
 const HomePage = () => {
@@ -19,10 +19,10 @@ const HomePage = () => {
 
   return (
     <Container className={classes.root}>
-        <SimpleCard/>
-        <DogCard/>
+      <SimpleCard />
+      <DogCard />
     </Container>
   );
-}
+};
 
 export default HomePage;
